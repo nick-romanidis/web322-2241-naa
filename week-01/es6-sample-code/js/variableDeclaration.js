@@ -20,7 +20,6 @@ function square()
 
 console.log(square())
 
-
 function cube()
 {
     return number ** 3;

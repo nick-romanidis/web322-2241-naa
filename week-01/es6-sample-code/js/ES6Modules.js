@@ -1,5 +1,5 @@
 // Import modules
-import Person from "./person.js";
+import {Animal} from "./person.js";
 import movies from "./arrays.js";
 
 // What and who is "Person"?
