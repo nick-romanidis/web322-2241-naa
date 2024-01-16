@@ -1,0 +1,20 @@
+{
+  "name": "ex4-express",
+  "version": "1.0.0",
+  "description": "A basic express program to demostrate require and express.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "web",
+    "server",
+    "basic",
+    "require"
+  ],
+  "author": "Nick Romanidis",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
