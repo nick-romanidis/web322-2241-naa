@@ -14,6 +14,8 @@ const path = require("path");
 const express = require("express");
 const app = express();
 
+const myModule = require("./modules/myModule");
+
 // Make the "assets" folder public (aka Static)
 app.use(express.static(path.join(__dirname, "/assets")));
 
@@ -26,6 +28,25 @@ app.get("/", (req, res) => {
 
 app.get("/on-the-menu", (req, res) => {
     res.send("On the menu page");
+});
+
+app.get("/name", (req, res) => {
+    let helloName = myModule.sayHello("Nick");
+    res.send(helloName);
+});
+
+// http://localhost:8080/nameq?personName=Jon
+app.get("/nameq", (req, res) => {
+    let name = req.query.personName || "Nobody";
+    let helloName = myModule.sayHello(name);
+    res.send(helloName);
+});
+
+// http://localhost:8080/namep/Frank
+app.get("/namep/:personName", (req, res) => {
+    let name = req.params.personName;
+    let helloName = myModule.sayHello(name);
+    res.send(helloName);
 });
 
 app.get("/headers", (req, res) => {
@@ -61,7 +82,7 @@ const HTTP_PORT = process.env.PORT || 8080;
 function onHttpStart() {
     console.log("Express http server listening on: " + HTTP_PORT);
 }
-  
+
 // Listen on port 8080. The default port for http is 80, https is 443. We use 8080 here
 // because sometimes port 80 is in use by other applications on the machine
 app.listen(HTTP_PORT, onHttpStart);
