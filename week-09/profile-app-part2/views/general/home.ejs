@@ -1,0 +1,8 @@
+<h2>Home Page</h2>
+<p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit cumque quaerat a dolorem distinctio vero
+    quae, sapiente animi mollitia totam labore unde cum accusantium. Earum quia sit aliquid cupiditate ratione!
+</p>
+<% if (typeof user !== "undefined" && typeof user.profilePic === "string") { %>
+    <img src="/profile-pics/<%- user.profilePic %>" alt="<%= user.FirstName %>'s profile pic" />
+<% } %>
